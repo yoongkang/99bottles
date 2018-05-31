@@ -4,6 +4,10 @@ class Bottles
     [firstline(num), secondline(num)].map { |s| s + "\n"}.join
   end
 
+  def verses(*nums)
+    nums.map { |n| verse(n) }.join("\n")
+  end
+
   def firstline(num)
     num_bottles = current_bottle(num)
     "#{num_bottles} of beer on the wall, #{num_bottles.downcase} of beer."
