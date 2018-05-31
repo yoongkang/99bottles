@@ -4,7 +4,8 @@ class Bottles
     [firstline(num), secondline(num)].map { |s| s + "\n"}.join
   end
 
-  def verses(*nums)
+  def verses(num1, num2)
+    nums = (num2..num1).to_a.reverse
     nums.map { |n| verse(n) }.join("\n")
   end
 
