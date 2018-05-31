@@ -5,11 +5,30 @@ class Bottles
   end
 
   def firstline(num)
-    "#{num} bottles of beer on the wall, #{num} bottles of beer."
+    num_bottles = current_bottle(num)
+    "#{num_bottles} of beer on the wall, #{num_bottles} of beer."
   end
 
   def secondline(num)
-    s = num > 2 ? "s" : ""
-    "Take one down and pass it around, #{num-1} bottle#{s} of beer on the wall."
+    "Take #{num == 1 ? "it": "one"} down and pass it around, #{remaining_bottle(num - 1)} of beer on the wall."
+  end
+
+  def current_bottle(num)
+    if num == 1
+      "1 bottle"
+    else
+      "#{num} bottles"
+    end
+  end
+
+
+  def remaining_bottle(num)
+    if num == 1
+      "1 bottle"
+    elsif num == 0
+      "no more bottles"
+    else
+      "#{num} bottles"
+    end
   end
 end
