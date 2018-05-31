@@ -9,6 +9,10 @@ class Bottles
     nums.map { |n| verse(n) }.join("\n")
   end
 
+  def song
+    verses(99, 0)
+  end
+
   def firstline(num)
     num_bottles = current_bottle(num)
     "#{num_bottles} of beer on the wall, #{num_bottles.downcase} of beer."
